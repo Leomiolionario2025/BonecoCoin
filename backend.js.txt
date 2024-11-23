@@ -1,0 +1,12 @@
+const web3 = require('@solana/web3.js');
+
+async function main() {
+    const connection = new web3.Connection(web3.clusterApiUrl('devnet'), 'confirmed');
+    const wallet = web3.Keypair.generate();
+
+    console.log("Chave pública da carteira:", wallet.publicKey.toBase58());
+}
+
+main().catch(err => {
+    console.error(err);
+});
